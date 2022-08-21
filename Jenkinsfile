@@ -20,7 +20,7 @@ pipeline{
        stage('Terraform Apply'){
             steps {
                 withEnv(['GCLOUD_PATH=/var/lib/jenkins/workspace/Jenkins_gcloud/google-cloud-sdk/bin']) {
-                    #withCredentials([file(credentialsId: 'gcp_credentials', variable: 'gcp_creds')]) {
+                    /* withCredentials([file(credentialsId: 'gcp_credentials', variable: 'gcp_creds')]) { */
                         sh '''
                         $GCLOUD_PATH/gcloud --version
                         $GCLOUD_PATH/gcloud auth application-default login
