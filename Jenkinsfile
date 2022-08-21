@@ -18,9 +18,11 @@ pipeline{
             }
         }
 	stage('Terraform plan'){
+	withCredentials([file(credentialsId: 'gcp_credentials', variable: 'gcp_creds')]) {
             steps{
                 sh ('terraform plan')
             }
+	}
         }
        stage('Terraform Apply'){
             steps {
