@@ -7,5 +7,10 @@ pipeline{
                 git branch: 'feature', credentialsId: 'git_credential', url: 'https://github.com/nabaansari9/learn-terraform-provision-gke-cluster.git'
             }
         }
+        stage('Terraform init'){
+            steps{
+                sh ('terraform init')
+            }
+        }
     }
 }
