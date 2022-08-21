@@ -10,9 +10,7 @@ pipeline{
 
         stage('Gcloud init'){
             steps {
-            withEnv(['GCLOUD_PATH=/home/ec2-user/google-cloud-sdk/bin']) {
-                sh '$GCLOUD_PATH/gcloud --version'
-                }
+                sh ('gcloud version')
             }
         }
         stage('Terraform init'){
