@@ -19,8 +19,8 @@ pipeline{
         }
        stage('Terraform Apply'){
             steps{
-                withCredentials([file(credentialsId: 'gcp_credentials', variable: 'GCLOUD_CREDS')]){
-                    gcloud auth activate-service account --key-file="$GCLOUD_CREDS"
+                withCredentials([file(credentialsId: 'gcp_credentials', variable: 'gcp_creds')]) {
+                    gcloud auth activate-service account --key-file="$gcp_creds"
                     sh ('terraform apply  --auto-approve')
                 }
                 
