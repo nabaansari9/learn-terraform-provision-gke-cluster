@@ -10,7 +10,7 @@ pipeline{
 
         stage('Gcloud init'){
             steps {
-            withEnv(['GCLOUD_PATH=/var/jenkins_home/google-cloud-sdk/bin']) {
+            withEnv(['GCLOUD_PATH=/home/ec2-user/google-cloud-sdk/bin']) {
                 sh '$GCLOUD_PATH/gcloud --version'
                 }
             }
