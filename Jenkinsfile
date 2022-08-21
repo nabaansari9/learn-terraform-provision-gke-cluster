@@ -10,7 +10,7 @@ pipeline{
 
         stage('Gcloud init'){
             steps{
-                sh ('gcloud init')
+                sh ('gcloud version')
             }
         }
         stage('Terraform init'){
