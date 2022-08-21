@@ -9,13 +9,17 @@ pipeline{
         }
         stage('Terraform init'){
             steps{
-                sh ('$pwd')
                 sh ('terraform init')
             }
         }
         stage('Terraform validate'){
             steps{
                 sh ('terraform validate')
+            }
+        }
+        stage('Terraform Apply'){
+            steps{
+                sh ('terraform apply')
             }
         }
     }
