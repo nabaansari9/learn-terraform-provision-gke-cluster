@@ -1,4 +1,4 @@
-variable "gke_username" {
+/* variable "gke_username" {
   default     = ""
   description = "gke username"
 }
@@ -6,6 +6,12 @@ variable "gke_username" {
 variable "gke_password" {
   default     = ""
   description = "gke password"
+} */
+  
+variable "gcp_credentials" {
+  type = string
+  sensitive = true
+  description = "Google Cloud service account credentials"
 }
 
 variable "gke_num_nodes" {
