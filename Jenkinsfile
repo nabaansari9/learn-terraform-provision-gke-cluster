@@ -24,6 +24,7 @@ pipeline{
                         sh '''
                         $GCLOUD_PATH/gcloud --version
                         $GCLOUD_PATH/gcloud auth activate-service-account --key-file="$gcp_creds"
+			terraform apply  --auto-approve
                         '''
                     }
                     
