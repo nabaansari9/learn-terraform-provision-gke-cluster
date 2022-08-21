@@ -17,6 +17,11 @@ pipeline{
                 sh ('terraform validate')
             }
         }
+	stage('Terraform plan'){
+            steps{
+                sh ('terraform plan')
+            }
+        }
        stage('Terraform Apply'){
             steps {
                 withEnv(['GCLOUD_PATH=/var/lib/jenkins/workspace/Jenkins_gcloud/google-cloud-sdk/bin']) {
