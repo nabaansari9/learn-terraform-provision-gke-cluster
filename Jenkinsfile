@@ -19,7 +19,10 @@ pipeline{
         }
        stage('Terraform Apply'){
             steps{
-                sh ('terraform apply  --auto-approve')
+                withCredentials([file(credentialId: 'gcp_credentials', variable: 'GCLOUD_CREDS')]){
+                    sh ('terraform apply  --auto-approve')
+                }
+                
             }
         }
     }
